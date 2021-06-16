@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { Keystone } = require("@keystonejs/keystone");
 const { PasswordAuthStrategy } = require("@keystonejs/auth-password");
 const { Text, Checkbox, Password } = require("@keystonejs/fields");
@@ -7,7 +8,7 @@ const initialiseData = require("./initial-data");
 
 const { MongooseAdapter: Adapter } = require("@keystonejs/adapter-mongoose");
 const PROJECT_NAME = "backend";
-const adapterConfig = { mongoUri: "mongodb://localhost/backend" };
+const adapterConfig = { mongoUri: process.env.MONGODB_URI };
 
 const keystone = new Keystone({
   adapter: new Adapter(adapterConfig),
