@@ -17,7 +17,7 @@
     "client": "cd client && npm run start",
     "seed": "cd server && node seeders",
     "install": "concurrently \"cd server && npm i\" \"cd client && npm i\"",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "cd client && npm run build"
   },
   "dependencies": {
     "dotenv": "^8.6.0"
